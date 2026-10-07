@@ -4,8 +4,7 @@
     box-sizing:border-box;
 }
 
-html,
-body{
+html,body{
     width:100%;
     height:100%;
 }
@@ -13,93 +12,48 @@ body{
 body{
     min-height:100vh;
     overflow:hidden;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     color:white;
 
     background:
-    radial-gradient(
-        circle at 20% 20%,
-        #ffb0c8,
-        transparent 28%
-    ),
-    radial-gradient(
-        circle at 80% 80%,
-        #8d45e8,
-        transparent 30%
-    ),
-    linear-gradient(
-        135deg,
-        #4b075f,
-        #d91b68,
-        #ff477e
-    );
+    radial-gradient(circle at 20% 20%,#ffb0c8,transparent 28%),
+    radial-gradient(circle at 80% 80%,#8d45e8,transparent 30%),
+    linear-gradient(135deg,#4b075f,#d91b68,#ff477e);
 }
-
-
-/* =========================
-   ALL PAGES
-========================= */
 
 .page{
     display:none;
-
     width:100%;
     height:100vh;
-
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     padding:18px;
 }
 
 .page.active{
     display:flex;
-
-    animation:
-        pageIn .7s ease;
+    animation:pageIn .7s ease;
 }
-
-
-/* =========================
-   BUTTON
-========================= */
 
 button{
     margin-top:20px;
-
     border:0;
-
     border-radius:40px;
-
     padding:12px 24px;
-
     background:white;
-
     color:#e91e63;
-
     font-size:15px;
-
     font-weight:bold;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.3);
-
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
     cursor:pointer;
-
-    transition:.2s;
 }
 
 button:active{
     transform:scale(.93);
 }
 
-
-/* =========================
-   PAGE 1
-   WELCOME
-========================= */
+/* WELCOME */
 
 .welcome{
     width:100%;
@@ -108,44 +62,29 @@ button:active{
 
 .glow-text{
     font-size:36px;
-
     font-weight:bold;
-
-    animation:
-        glow 1.7s infinite alternate;
+    animation:glow 1.7s infinite alternate;
 }
 
 .mim-glow{
     font-size:29px;
-
     font-weight:bold;
-
     margin:10px 0;
-
-    animation:
-        softGlow 1.5s infinite alternate;
+    animation:softGlow 1.5s infinite alternate;
 }
 
 .love-small{
     font-size:17px;
-
     margin:10px;
-
-    animation:
-        pulse 1.3s infinite;
+    animation:pulse 1.3s infinite;
 }
 
 .welcome p{
     font-size:15px;
-
     line-height:1.7;
 }
 
-
-/* =========================
-   PAGE 2
-   ROBOT
-========================= */
+/* ROBOT */
 
 .robot-scene{
     width:100%;
@@ -154,81 +93,43 @@ button:active{
 
 .scene-title{
     font-size:20px;
-
     margin-bottom:35px;
 }
 
 .walking-area{
     position:relative;
-
     width:100%;
-
     height:220px;
-
     overflow:hidden;
 }
 
-
-/* ROBOT */
-
 .robot-walking{
     position:absolute;
-
     left:-150px;
-
     bottom:30px;
-
     width:120px;
-
     height:175px;
-
-    animation:
-        robotWalk 4.5s linear forwards;
+    animation:robotWalk 4.5s linear forwards;
 }
-
-
-/* ROBOT HEAD */
 
 .robot-head{
     position:absolute;
-
     width:80px;
-
     height:62px;
-
     left:20px;
-
     top:10px;
-
     border-radius:18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #aeb8c8
-        );
-
+    background:linear-gradient(145deg,#fff,#aeb8c8);
     border:3px solid #727c8b;
-
-    box-shadow:
-        0 8px 15px rgba(0,0,0,.25);
+    box-shadow:0 8px 15px rgba(0,0,0,.25);
 }
-
-
-/* ROBOT EYES */
 
 .eye{
     position:absolute;
-
     width:10px;
-
     height:10px;
-
     background:#ff3e7c;
-
     border-radius:50%;
-
     top:20px;
 }
 
@@ -240,606 +141,380 @@ button:active{
     right:18px;
 }
 
-
-/* ROBOT MOUTH */
-
 .robot-mouth{
     position:absolute;
-
     left:50%;
-
     bottom:8px;
-
-    transform:
-        translateX(-50%);
-
+    transform:translateX(-50%);
     font-size:18px;
 }
-
-
-/* ROBOT ANTENNA */
 
 .antenna{
     position:absolute;
-
     top:-15px;
-
     left:50%;
-
-    transform:
-        translateX(-50%);
-
+    transform:translateX(-50%);
     font-size:15px;
 }
 
-
-/* ROBOT BODY */
-
 .robot-body{
     position:absolute;
-
     width:62px;
-
     height:55px;
-
     left:29px;
-
     top:79px;
-
     border-radius:14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #eef2f7,
-            #9faabd
-        );
-
+    background:linear-gradient(145deg,#eef2f7,#9faabd);
     border:3px solid #727c8b;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:18px;
 }
 
-
-/* ROBOT ARMS */
-
 .robot-arm{
     position:absolute;
-
     width:42px;
-
     height:11px;
-
     background:#8e99aa;
-
     border-radius:10px;
-
     top:88px;
 }
 
-
-/* LEFT ARM */
-
 .left-arm{
     left:-8px;
-
-    transform:
-        rotate(25deg);
-
-    animation:
-        armMove .4s infinite alternate;
+    transform:rotate(25deg);
+    animation:armMove .4s infinite alternate;
 }
-
-
-/* RIGHT ARM */
 
 .right-arm{
     left:78px;
-
-    transform:
-        rotate(15deg);
-
-    transform-origin:
-        left center;
+    transform:rotate(15deg);
+    transform-origin:left center;
 }
-
-
-/* GIFT IN ROBOT HAND */
 
 .hand-gift{
     position:absolute;
-
     left:27px;
-
     top:-18px;
-
     font-size:35px;
-
-    animation:
-        giftBounce .5s infinite alternate;
+    animation:giftBounce .5s infinite alternate;
 }
-
-
-/* ROBOT LEGS */
 
 .leg{
     position:absolute;
-
     width:11px;
-
     height:32px;
-
     background:#8e99aa;
-
     border-radius:10px;
-
     top:134px;
 }
 
 .leg1{
     left:40px;
-
-    animation:
-        legWalk .35s infinite alternate;
+    animation:legWalk .35s infinite alternate;
 }
 
 .leg2{
     left:69px;
-
-    animation:
-        legWalk .35s infinite alternate-reverse;
+    animation:legWalk .35s infinite alternate-reverse;
 }
 
 .robot-scene > p{
     font-size:15px;
-
-    margin-top:5px;
 }
 
+/* GIFTS */
 
-/* =========================
-   PAGE 3
-   MAIN GIFT
-========================= */
-
-.gift-page{
+.gift-page,
+.tap-gift{
     width:100%;
-
     max-width:430px;
 }
 
-.big-gift{
+.big-gift,
+.tap-gift-box{
     font-size:110px;
-
     cursor:pointer;
-
-    animation:
-        giftPulse 1.4s infinite;
+    animation:giftPulse 1.4s infinite;
 }
 
-.gift-page h2{
+.gift-page h2,
+.tap-gift h2{
     margin-top:8px;
-
-    font-size:24px;
 }
 
-.gift-page p{
-    margin-top:8px;
-
-    font-size:15px;
-}
-
-
-/* =========================
-   LETTER PAGES
-========================= */
+/* LETTER */
 
 .letter{
     width:100%;
-
     max-width:420px;
-
     padding:28px 20px;
-
     border-radius:25px;
-
-    background:
-        rgba(255,255,255,.15);
-
-    border:
-        1px solid rgba(255,255,255,.3);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.3);
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
 }
 
 .letter-icon{
     font-size:48px;
-
     margin-bottom:7px;
-
-    animation:
-        pulse 1.4s infinite;
+    animation:pulse 1.4s infinite;
 }
 
 .letter small{
     letter-spacing:2px;
-
-    font-size:11px;
 }
 
 .letter h2{
     margin:12px 0;
-
-    font-size:24px;
 }
 
 .letter p{
     font-size:15px;
-
     line-height:1.8;
 }
 
 .letter h3{
     margin-top:15px;
-
-    font-size:18px;
 }
 
-
-/* =========================
-   PAGE 8
-   LAST SURPRISE
-========================= */
-
-.tap-gift{
-    width:100%;
-
-    max-width:430px;
-}
-
-.tap-title{
-    font-size:25px;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-}
-
-.tap-gift-box{
-    font-size:110px;
-
-    cursor:pointer;
-
-    animation:
-        giftPulse 1.4s infinite;
-}
-
-.tap-gift h2{
-    margin-top:8px;
-
-    font-size:23px;
-}
-
-.tap-gift p{
-    margin-top:8px;
-
-    font-size:15px;
-}
-
-
-/* =========================
-   PAGE 9
-   BIRTHDAY END
-========================= */
+/* PAGE 9 */
 
 .final-page{
     background:
-        radial-gradient(
-            circle at center,
-            #ff82ad,
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #5a0871,
-            #e91e63,
-            #ff477e
-        );
+    radial-gradient(circle at center,#ff82ad,transparent 35%),
+    linear-gradient(135deg,#5a0871,#e91e63,#ff477e);
 }
 
 .final{
     width:100%;
-
     max-width:470px;
 }
 
 .final-cake{
     font-size:100px;
-
-    animation:
-        cakeFloat 2s infinite;
+    animation:cakeFloat 2s infinite;
 }
 
 .final-happy{
     font-size:35px;
-
     font-weight:bold;
-
-    line-height:1.25;
 }
 
 .jahid{
     font-size:25px;
-
     font-weight:bold;
-
     margin-top:8px;
 }
 
 .hearts-line{
     margin:15px 0;
-
     font-size:18px;
-
     letter-spacing:3px;
 }
 
 .final-robot{
     font-size:45px;
-
     margin-top:12px;
-
-    animation:
-        robotFloat 2s infinite;
+    animation:robotFloat 2s infinite;
 }
 
+/* ONE MORE THING */
 
-/* =========================
-   PAGE 10
-   I REALLY LIKE IT
-========================= */
+.one-more-page{
+    background:
+    radial-gradient(circle at 20% 20%,#ffb0c8,transparent 28%),
+    radial-gradient(circle at 80% 80%,#8d45e8,transparent 30%),
+    linear-gradient(135deg,#4b075f,#d91b68,#ff477e);
+}
+
+.one-more{
+    width:100%;
+    max-width:430px;
+    padding:30px 22px;
+}
+
+.one-more-title{
+    font-size:35px;
+    font-weight:bold;
+    margin-bottom:15px;
+    animation:softGlow 1.5s infinite alternate;
+}
+
+.one-more p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* EXTRA CARDS */
+
+.extra-card{
+    width:100%;
+    max-width:420px;
+    padding:30px 22px;
+    border-radius:25px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.extra-icon{
+    font-size:55px;
+    margin-bottom:10px;
+    animation:pulse 1.5s infinite;
+}
+
+.extra-card h2{
+    font-size:24px;
+    margin-bottom:14px;
+}
+
+.extra-card p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+.secret-gift{
+    font-size:80px;
+}
+
+/* FINAL */
 
 .final-message-page{
     background:
-        radial-gradient(
-            circle at 20% 20%,
-            #ffb0c8,
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            #8d45e8,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #4b075f,
-            #d91b68,
-            #ff477e
-        );
-}
-
-.final-message{
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    radial-gradient(circle at 20% 20%,#ffb0c8,transparent 28%),
+    radial-gradient(circle at 80% 80%,#8d45e8,transparent 30%),
+    linear-gradient(135deg,#4b075f,#d91b68,#ff477e);
 }
 
 .final-message h1{
     font-size:38px;
-
     font-weight:bold;
-
-    padding:20px;
-
-    animation:
-        finalTextGlow 1.8s infinite alternate;
+    animation:finalTextGlow 1.8s infinite alternate;
 }
 
-
-/* =========================
-   ANIMATIONS
-========================= */
+/* ANIMATIONS */
 
 @keyframes pageIn{
-
     from{
         opacity:0;
-
-        transform:
-            scale(.93);
+        transform:scale(.93);
     }
-
     to{
         opacity:1;
-
-        transform:
-            scale(1);
+        transform:scale(1);
     }
 }
-
 
 @keyframes glow{
-
     from{
-        text-shadow:
-            0 0 5px white;
+        text-shadow:0 0 5px white;
     }
-
     to{
-        text-shadow:
-            0 0 15px white,
-            0 0 30px #ff5c9a;
+        text-shadow:0 0 15px white,0 0 30px #ff5c9a;
     }
 }
-
 
 @keyframes softGlow{
-
     from{
-        text-shadow:
-            0 0 5px white;
+        text-shadow:0 0 5px white;
     }
-
     to{
-        text-shadow:
-            0 0 20px white;
+        text-shadow:0 0 20px white;
     }
 }
-
 
 @keyframes pulse{
-
-    0%,
-    100%{
-        transform:
-            scale(1);
+    0%,100%{
+        transform:scale(1);
     }
-
     50%{
-        transform:
-            scale(1.08);
+        transform:scale(1.08);
     }
 }
 
-
 @keyframes robotWalk{
-
     from{
         left:-150px;
     }
-
     to{
         left:45%;
     }
 }
 
-
 @keyframes legWalk{
-
     from{
-        transform:
-            rotate(18deg);
+        transform:rotate(18deg);
     }
-
     to{
-        transform:
-            rotate(-18deg);
+        transform:rotate(-18deg);
     }
 }
-
 
 @keyframes armMove{
-
     from{
-        transform:
-            rotate(18deg);
+        transform:rotate(18deg);
     }
-
     to{
-        transform:
-            rotate(30deg);
+        transform:rotate(30deg);
     }
 }
-
 
 @keyframes giftBounce{
-
     from{
-        transform:
-            translateY(0);
+        transform:translateY(0);
     }
-
     to{
-        transform:
-            translateY(-4px);
+        transform:translateY(-4px);
     }
 }
-
 
 @keyframes giftPulse{
-
-    0%,
-    100%{
-        transform:
-            scale(1);
+    0%,100%{
+        transform:scale(1);
     }
-
     50%{
-        transform:
-            scale(1.08);
+        transform:scale(1.08);
     }
 }
-
 
 @keyframes cakeFloat{
-
-    0%,
-    100%{
-        transform:
-            translateY(0);
+    0%,100%{
+        transform:translateY(0);
     }
-
     50%{
-        transform:
-            translateY(-6px);
+        transform:translateY(-6px);
     }
 }
-
 
 @keyframes robotFloat{
-
-    0%,
-    100%{
-        transform:
-            translateY(0);
+    0%,100%{
+        transform:translateY(0);
     }
-
     50%{
-        transform:
-            translateY(-7px);
+        transform:translateY(-7px);
     }
 }
-
 
 @keyframes finalTextGlow{
-
     from{
-        transform:
-            scale(1);
-
-        text-shadow:
-            0 0 8px white;
+        transform:scale(1);
+        text-shadow:0 0 8px white;
     }
-
     to{
-        transform:
-            scale(1.06);
-
-        text-shadow:
-            0 0 18px white,
-            0 0 30px #ff8bb3;
+        transform:scale(1.06);
+        text-shadow:0 0 18px white,0 0 30px #ff8bb3;
     }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:480px){
 
@@ -851,19 +526,12 @@ button:active{
         font-size:27px;
     }
 
-    .scene-title{
-        font-size:18px;
-    }
-
     .letter{
         padding:25px 17px;
     }
 
-    .letter h2{
-        font-size:22px;
-    }
-
-    .letter p{
+    .letter p,
+    .extra-card p{
         font-size:14px;
     }
 
@@ -875,8 +543,11 @@ button:active{
         font-size:22px;
     }
 
+    .one-more-title{
+        font-size:31px;
+    }
+
     .final-message h1{
         font-size:34px;
     }
-
 }
