@@ -1,283 +1,169 @@
 let currentPage = 1;
 
-const music =
-    document.getElementById("music");
-
-
-
-/* ========================= */
-/* SHOW PAGE */
-/* ========================= */
-
-function showPage(number){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(page => {
-
-            page.classList.remove("active");
-
-        });
-
-
-    const page =
-        document.getElementById(
-            "page" + number
-        );
-
-
-    if(page){
-
-        page.classList.add("active");
-
-    }
-
-}
-
-
-
-/* ========================= */
-/* START */
-/* ========================= */
+const music = document.getElementById("music");
 
 function startStory(){
 
     music.volume = 0.45;
 
-
-    music.play().catch(() => {
-
-        console.log(
-            "Music could not start."
-        );
-
+    music.play().catch(()=>{
+        console.log("Music needs user interaction.");
     });
-
 
     nextPage();
 
-
-    createHearts(12);
-
+    // Robot automatically moves to next page
+    setTimeout(()=>{
+        if(currentPage === 2){
+            nextPage();
+        }
+    },4500);
 }
 
 
-
-/* ========================= */
-/* NEXT PAGE */
-/* ========================= */
-
 function nextPage(){
 
-    if(currentPage < 8){
-
+    if(currentPage < 10){
         currentPage++;
-
         showPage(currentPage);
-
-        createHearts(5);
-
     }
 
 }
 
 
+function showPage(number){
 
-/* ========================= */
-/* OPEN GIFT */
-/* ========================= */
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
 
-function openGift(){
+    const page = document.getElementById("page" + number);
 
-    const gift =
-        document.querySelector(
-            ".gift-box"
-        );
-
-
-    const text =
-        document.getElementById(
-            "giftText"
-        );
-
-
-    gift.style.animation =
-        "none";
-
-
-    gift.style.transform =
-        "translateX(-50%) scale(1.3)";
-
-
-    gift.innerHTML =
-        "✨🎁✨";
-
-
-    text.innerHTML =
-        "For the sweetest Mim ❤️";
-
-
-    createHearts(25);
-
-
-    setTimeout(() => {
-
-        nextPage();
-
-    },1800);
+    if(page){
+        page.classList.add("active");
+    }
 
 }
 
 
+/* MAIN GIFT */
 
-/* ========================= */
-/* BLOW CANDLE */
-/* ========================= */
+function openMainGift(){
 
-function blowCandle(){
+    const gift = document.querySelector(".big-gift");
+    const text = document.getElementById("giftOpenText");
 
-    const flame =
-        document.getElementById(
-            "flame"
-        );
+    gift.innerHTML = "❤️";
 
+    gift.style.animation = "none";
 
-    flame.innerHTML =
-        "💨";
+    gift.style.transform = "scale(1.2)";
 
+    text.innerHTML = "A little message for you... ❤️";
 
-    flame.style.animation =
-        "none";
+    createHearts(15);
 
-
-    createHearts(30);
-
-
-    setTimeout(() => {
-
+    setTimeout(()=>{
         nextPage();
-
-    },1400);
+    },1200);
 
 }
 
 
+/* LETTERS */
 
-/* ========================= */
-/* HEARTS / FLOWERS */
-/* ========================= */
+function nextLetter(){
+    nextPage();
+}
+
+
+/* ONE LAST SURPRISE */
+
+function showTapGift(){
+    nextPage();
+}
+
+
+/* LAST GIFT */
+
+function openFinalGift(){
+
+    const gift = document.querySelector(".tap-gift-box");
+
+    gift.innerHTML = "❤️";
+
+    gift.style.animation = "none";
+
+    createHearts(18);
+
+    setTimeout(()=>{
+        nextPage();
+    },1200);
+
+}
+
+
+/* FLYING HEARTS */
 
 function createHearts(amount){
 
-    for(
-        let i = 0;
-        i < amount;
-        i++
-    ){
+    for(let i = 0; i < amount; i++){
 
-        const item =
-            document.createElement("div");
-
+        const item = document.createElement("div");
 
         const emojis = [
-
             "❤️",
             "💕",
-            "💖",
-            "💗",
-            "🌸",
-            "✨",
-            "🎉"
-
+            "💗"
         ];
 
-
         item.innerHTML =
-            emojis[
-                Math.floor(
-                    Math.random()
-                    * emojis.length
-                )
-            ];
+            emojis[Math.floor(Math.random() * emojis.length)];
 
-
-        item.style.position =
-            "fixed";
-
+        item.style.position = "fixed";
 
         item.style.left =
-            Math.random()
-            * 100 + "%";
+            Math.random() * 100 + "%";
 
-
-        item.style.bottom =
-            "-30px";
-
+        item.style.bottom = "-25px";
 
         item.style.fontSize =
-            18 +
-            Math.random()
-            * 22 +
-            "px";
+            12 + Math.random() * 10 + "px";
+
+        item.style.zIndex = "999";
+
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
 
 
-        item.style.zIndex =
-            "999";
+        const animation = item.animate(
 
-
-        item.style.pointerEvents =
-            "none";
-
-
-        document.body
-            .appendChild(item);
-
-
-
-        const animation =
-            item.animate(
-
-                [
-
-                    {
-
-                        transform:
-                            "translateY(0) rotate(0deg)",
-
-                        opacity:1
-
-                    },
-
-                    {
-
-                        transform:
-                            "translateY(-110vh) rotate(360deg)",
-
-                        opacity:0
-
-                    }
-
-                ],
+            [
+                {
+                    transform:"translateY(0)",
+                    opacity:1
+                },
 
                 {
-
-                    duration:
-                        2500 +
-                        Math.random()
-                        * 2000,
-
-                    easing:
-                        "ease-out"
-
+                    transform:
+                    "translateY(-110vh) rotate(360deg)",
+                    opacity:0
                 }
+            ],
 
-            );
+            {
+                duration:
+                    2200 + Math.random() * 1800,
+
+                easing:"ease-out"
+            }
+
+        );
 
 
-        animation.onfinish = () => {
-
+        animation.onfinish = ()=>{
             item.remove();
-
         };
 
     }
@@ -285,17 +171,14 @@ function createHearts(amount){
 }
 
 
+/* PAGE 10 HEARTS */
 
-/* ========================= */
-/* FINAL CELEBRATION */
-/* ========================= */
+setInterval(()=>{
 
-setInterval(() => {
+    if(currentPage === 10){
 
-    if(currentPage === 8){
-
-        createHearts(10);
+        createHearts(5);
 
     }
 
-},3000);
+},1800);
