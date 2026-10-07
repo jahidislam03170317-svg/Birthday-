@@ -2,114 +2,169 @@ let currentPage = 1;
 
 const music = document.getElementById("music");
 
-function startStory(){
 
-    music.volume = 0.45;
+/* =========================
+   START STORY
+========================= */
 
-    music.play().catch(()=>{
-        console.log("Music needs user interaction.");
-    });
+function startStory() {
+
+    if (music) {
+        music.volume = 0.45;
+
+        music.play().catch(() => {
+            console.log("Music needs user interaction.");
+        });
+    }
 
     nextPage();
 
-    // Robot automatically moves to next page
-    setTimeout(()=>{
-        if(currentPage === 2){
+    // Robot page থাকবে প্রায় 4.5 seconds
+    setTimeout(() => {
+
+        if (currentPage === 2) {
             nextPage();
         }
-    },4500);
+
+    }, 4500);
 }
 
 
-function nextPage(){
+/* =========================
+   NEXT PAGE
+========================= */
 
-    if(currentPage < 10){
+function nextPage() {
+
+    if (currentPage < 16) {
+
         currentPage++;
+
         showPage(currentPage);
+
     }
 
 }
 
 
-function showPage(number){
+/* =========================
+   SHOW PAGE
+========================= */
 
-    document.querySelectorAll(".page").forEach(page=>{
+function showPage(number) {
+
+    document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
     });
 
     const page = document.getElementById("page" + number);
 
-    if(page){
+    if (page) {
         page.classList.add("active");
     }
 
 }
 
 
-/* MAIN GIFT */
+/* =========================
+   MAIN GIFT
+========================= */
 
-function openMainGift(){
+function openMainGift() {
 
     const gift = document.querySelector(".big-gift");
     const text = document.getElementById("giftOpenText");
 
-    gift.innerHTML = "❤️";
+    if (gift) {
+        gift.innerHTML = "❤️";
+        gift.style.animation = "none";
+        gift.style.transform = "scale(1.2)";
+    }
 
-    gift.style.animation = "none";
-
-    gift.style.transform = "scale(1.2)";
-
-    text.innerHTML = "A little message for you... ❤️";
+    if (text) {
+        text.innerHTML = "A little message for you... ❤️";
+    }
 
     createHearts(15);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         nextPage();
-    },1200);
+    }, 1200);
 
 }
 
 
-/* LETTERS */
+/* =========================
+   LETTER BUTTONS
+========================= */
 
-function nextLetter(){
+function nextLetter() {
     nextPage();
 }
 
 
-/* ONE LAST SURPRISE */
+/* =========================
+   FINAL LETTER → LAST GIFT
+========================= */
 
-function showTapGift(){
+function showTapGift() {
     nextPage();
 }
 
 
-/* LAST GIFT */
+/* =========================
+   LAST GIFT
+========================= */
 
-function openFinalGift(){
+function openFinalGift() {
 
     const gift = document.querySelector(".tap-gift-box");
 
-    gift.innerHTML = "❤️";
+    if (gift) {
+        gift.innerHTML = "❤️";
+        gift.style.animation = "none";
+        gift.style.transform = "scale(1.2)";
+    }
 
-    gift.style.animation = "none";
+    createHearts(20);
 
-    createHearts(18);
+    /*
+       Gift open হওয়ার পর
+       আগে Happy Birthday Pookie page আসবে
+    */
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         nextPage();
-    },1200);
+
+        /*
+           Happy Birthday Pookie page
+           কিছুক্ষণ দেখানোর পর
+           One More Thing page আসবে
+        */
+
+        setTimeout(() => {
+
+            if (currentPage === 9) {
+                nextPage();
+            }
+
+        }, 5000);
+
+    }, 1200);
 
 }
 
 
-/* FLYING HEARTS */
+/* =========================
+   FLYING HEARTS
+========================= */
 
-function createHearts(amount){
+function createHearts(amount) {
 
-    for(let i = 0; i < amount; i++){
+    for (let i = 0; i < amount; i++) {
 
-        const item = document.createElement("div");
+        const heart = document.createElement("div");
 
         const emojis = [
             "❤️",
@@ -117,38 +172,38 @@ function createHearts(amount){
             "💗"
         ];
 
-        item.innerHTML =
+        heart.innerHTML =
             emojis[Math.floor(Math.random() * emojis.length)];
 
-        item.style.position = "fixed";
+        heart.style.position = "fixed";
 
-        item.style.left =
+        heart.style.left =
             Math.random() * 100 + "%";
 
-        item.style.bottom = "-25px";
+        heart.style.bottom = "-30px";
 
-        item.style.fontSize =
-            12 + Math.random() * 10 + "px";
+        heart.style.fontSize =
+            (12 + Math.random() * 12) + "px";
 
-        item.style.zIndex = "999";
+        heart.style.zIndex = "9999";
 
-        item.style.pointerEvents = "none";
+        heart.style.pointerEvents = "none";
 
-        document.body.appendChild(item);
+        document.body.appendChild(heart);
 
 
-        const animation = item.animate(
+        const animation = heart.animate(
 
             [
                 {
-                    transform:"translateY(0)",
-                    opacity:1
+                    transform: "translateY(0) rotate(0deg)",
+                    opacity: 1
                 },
 
                 {
                     transform:
-                    "translateY(-110vh) rotate(360deg)",
-                    opacity:0
+                        "translateY(-110vh) rotate(360deg)",
+                    opacity: 0
                 }
             ],
 
@@ -156,14 +211,14 @@ function createHearts(amount){
                 duration:
                     2200 + Math.random() * 1800,
 
-                easing:"ease-out"
+                easing: "ease-out"
             }
 
         );
 
 
-        animation.onfinish = ()=>{
-            item.remove();
+        animation.onfinish = () => {
+            heart.remove();
         };
 
     }
@@ -171,14 +226,16 @@ function createHearts(amount){
 }
 
 
-/* PAGE 10 HEARTS */
+/* =========================
+   FINAL PAGE HEARTS
+========================= */
 
-setInterval(()=>{
+setInterval(() => {
 
-    if(currentPage === 10){
+    if (currentPage === 16) {
 
         createHearts(5);
 
     }
 
-},1800);
+}, 1800);
