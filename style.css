@@ -1,0 +1,1181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 20% 20%,
+        #ffb6c9,
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 80% 80%,
+        #a855f7,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #5b0b72,
+        #e91e63,
+        #ff477e
+    );
+
+}
+
+
+
+/* ========================= */
+/* PAGE */
+/* ========================= */
+
+.page{
+
+    display:none;
+
+    width:100%;
+
+    height:100vh;
+
+    min-height:100vh;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+.page.active{
+
+    display:flex;
+
+    animation:
+        pageIn .8s ease;
+
+}
+
+
+
+/* ========================= */
+/* COMMON */
+/* ========================= */
+
+.story,
+.letter-card,
+.gift-page,
+.cake-page,
+.final-story{
+
+    width:100%;
+
+    max-width:450px;
+
+}
+
+
+h1{
+
+    font-size:42px;
+
+    margin:15px 0 5px;
+
+    text-shadow:
+        0 5px 20px
+        rgba(0,0,0,.3);
+
+}
+
+
+h2{
+
+    font-size:29px;
+
+    margin-bottom:18px;
+
+}
+
+
+p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+button{
+
+    margin-top:25px;
+
+    border:0;
+
+    border-radius:40px;
+
+    padding:14px 26px;
+
+    background:white;
+
+    color:#e91e63;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+button:active{
+
+    transform:scale(.92);
+
+}
+
+
+
+/* ========================= */
+/* ROBOT */
+/* ========================= */
+
+.robot{
+
+    position:relative;
+
+    width:150px;
+
+    height:190px;
+
+    margin:
+        0 auto 10px;
+
+    animation:
+        robotFloat 2s
+        infinite ease-in-out;
+
+}
+
+
+.robot-head{
+
+    position:absolute;
+
+    width:115px;
+
+    height:90px;
+
+    left:18px;
+
+    top:35px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f5f5,
+            #bfc7d5
+        );
+
+    border:4px solid #7d8797;
+
+    box-shadow:
+
+        inset 0 5px 10px white,
+
+        0 15px 25px
+        rgba(0,0,0,.25);
+
+}
+
+
+.eye{
+
+    position:absolute;
+
+    width:15px;
+
+    height:15px;
+
+    background:#ff3f81;
+
+    border-radius:50%;
+
+    top:30px;
+
+}
+
+
+.eye:first-child{
+
+    left:27px;
+
+}
+
+
+.eye:nth-child(2){
+
+    right:27px;
+
+}
+
+
+.mouth{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:15px;
+
+    transform:
+        translateX(-50%);
+
+    font-size:25px;
+
+    color:#555;
+
+}
+
+
+.robot-body{
+
+    position:absolute;
+
+    width:95px;
+
+    height:75px;
+
+    left:28px;
+
+    top:122px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e9edf3,
+            #aeb8c8
+        );
+
+    border:4px solid #7d8797;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ff3f81;
+
+    font-size:25px;
+
+}
+
+
+.antenna{
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size:24px;
+
+}
+
+
+.arm{
+
+    position:absolute;
+
+    font-size:30px;
+
+    top:135px;
+
+}
+
+
+.arm.left{
+
+    left:0;
+
+}
+
+
+.arm.right{
+
+    right:0;
+
+}
+
+
+
+/* ========================= */
+/* LETTER */
+/* ========================= */
+
+.letter-card{
+
+    padding:32px 24px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.25);
+
+}
+
+
+.letter-card span{
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    opacity:.85;
+
+}
+
+
+.envelope{
+
+    font-size:65px;
+
+    animation:
+        float 2s
+        infinite ease-in-out;
+
+    margin-bottom:8px;
+
+}
+
+
+.letter-card h2{
+
+    margin-top:12px;
+
+}
+
+
+.floating-heart{
+
+    font-size:55px;
+
+    animation:
+        pulse 1.4s infinite;
+
+}
+
+
+.flower{
+
+    font-size:55px;
+
+    animation:
+        float 2s infinite;
+
+}
+
+
+.sparkle{
+
+    font-size:55px;
+
+    animation:
+        pulse 1s infinite;
+
+}
+
+
+.love-line{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ========================= */
+/* GIFT */
+/* ========================= */
+
+.gift-title{
+
+    font-size:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+.gift-robot{
+
+    position:relative;
+
+    height:330px;
+
+}
+
+
+.small-robot{
+
+    transform:scale(.8);
+
+    transform-origin:center;
+
+}
+
+
+.gift-box{
+
+    position:absolute;
+
+    width:105px;
+
+    height:100px;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:
+        translateX(-50%);
+
+    cursor:pointer;
+
+    animation:
+        giftShake 1.5s infinite;
+
+    filter:
+        drop-shadow(
+            0 12px 10px
+            rgba(0,0,0,.3)
+        );
+
+}
+
+
+.gift-body{
+
+    position:absolute;
+
+    width:105px;
+
+    height:75px;
+
+    bottom:0;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d88,
+            #ff1765
+        );
+
+}
+
+
+.gift-lid{
+
+    position:absolute;
+
+    width:115px;
+
+    height:25px;
+
+    left:-5px;
+
+    top:10px;
+
+    border-radius:5px;
+
+    background:#ff79a5;
+
+    z-index:3;
+
+}
+
+
+.ribbon-v{
+
+    position:absolute;
+
+    width:18px;
+
+    height:100%;
+
+    left:44px;
+
+    bottom:0;
+
+    background:#ffd84d;
+
+    z-index:4;
+
+}
+
+
+.ribbon-h{
+
+    position:absolute;
+
+    width:100%;
+
+    height:15px;
+
+    left:0;
+
+    bottom:30px;
+
+    background:#ffd84d;
+
+    z-index:4;
+
+}
+
+
+.gift-bow{
+
+    position:absolute;
+
+    top:-25px;
+
+    left:35px;
+
+    font-size:40px;
+
+    z-index:6;
+
+}
+
+
+#giftText{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+    animation:
+        pulse 1.3s infinite;
+
+}
+
+
+
+/* ========================= */
+/* CAKE */
+/* ========================= */
+
+.cake-title{
+
+    font-size:19px;
+
+    margin-bottom:20px;
+
+}
+
+
+.cake-scene{
+
+    position:relative;
+
+    width:370px;
+
+    max-width:95vw;
+
+    height:220px;
+
+    margin:20px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.cake-scene .cake{
+
+    font-size:145px;
+
+    animation:
+        cakeFloat 2s
+        infinite ease-in-out;
+
+}
+
+
+
+/* Candle OUTSIDE cake */
+
+.side-candle{
+
+    position:absolute;
+
+    left:
+        calc(50% + 125px);
+
+    top:80px;
+
+    font-size:42px;
+
+    z-index:10;
+
+    animation:
+        candleFloat 1.5s
+        infinite ease-in-out;
+
+}
+
+
+.side-flame{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-25px;
+
+    transform:
+        translateX(-50%);
+
+    font-size:24px;
+
+    animation:
+        flame .5s
+        infinite alternate;
+
+}
+
+
+.cake-page h2{
+
+    margin-top:5px;
+
+    font-size:28px;
+
+}
+
+
+
+/* ========================= */
+/* FINAL CAKE */
+/* ========================= */
+
+.final-cake-scene{
+
+    position:relative;
+
+    width:350px;
+
+    max-width:95vw;
+
+    height:190px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.final-cake{
+
+    font-size:145px;
+
+    animation:
+        cakeFloat 2s
+        infinite ease-in-out;
+
+}
+
+
+.final-side-candle{
+
+    position:absolute;
+
+    left:
+        calc(50% + 120px);
+
+    top:55px;
+
+    font-size:40px;
+
+    z-index:5;
+
+    animation:
+        candleFloat 1.5s
+        infinite ease-in-out;
+
+}
+
+
+.final-side-candle span{
+
+    position:absolute;
+
+    font-size:22px;
+
+    top:-22px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    animation:
+        flame .5s
+        infinite alternate;
+
+}
+
+
+
+/* ========================= */
+/* FINAL PAGE */
+/* ========================= */
+
+.final-page{
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #ff80ab,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #681080,
+        #e91e63,
+        #ff477e
+    );
+
+}
+
+
+.celebration{
+
+    font-size:34px;
+
+    animation:
+        celebrate 1s
+        infinite alternate;
+
+}
+
+
+.final-title{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 5px 20px
+        rgba(0,0,0,.3);
+
+}
+
+
+.mim-name{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin:
+        8px 0 18px;
+
+}
+
+
+.divider{
+
+    margin:20px 0;
+
+    letter-spacing:8px;
+
+}
+
+
+.from{
+
+    font-size:15px;
+
+}
+
+
+.jahid{
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-top:6px;
+
+}
+
+
+.final-robot{
+
+    font-size:65px;
+
+    margin-top:15px;
+
+    animation:
+        robotFloat 2s infinite;
+
+}
+
+
+.bottom-hearts{
+
+    margin-top:12px;
+
+    font-size:20px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.9)
+            translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes robotFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+@keyframes giftShake{
+
+    0%,100%{
+
+        transform:
+            translateX(-50%)
+            rotate(0);
+
+    }
+
+    25%{
+
+        transform:
+            translateX(-50%)
+            rotate(-7deg);
+
+    }
+
+    75%{
+
+        transform:
+            translateX(-50%)
+            rotate(7deg);
+
+    }
+
+}
+
+
+@keyframes cakeFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+@keyframes flame{
+
+    from{
+
+        transform:
+            translateX(-50%)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translateX(-50%)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes candleFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+@keyframes celebrate{
+
+    from{
+
+        transform:
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:480px){
+
+    h1{
+
+        font-size:35px;
+
+    }
+
+
+    h2{
+
+        font-size:25px;
+
+    }
+
+
+    p{
+
+        font-size:16px;
+
+    }
+
+
+    .letter-card{
+
+        padding:27px 18px;
+
+    }
+
+
+    .final-title{
+
+        font-size:34px;
+
+    }
+
+
+    .mim-name{
+
+        font-size:27px;
+
+    }
+
+
+    .cake-scene{
+
+        width:330px;
+
+    }
+
+
+    .cake-scene .cake{
+
+        font-size:125px;
+
+    }
+
+
+    .side-candle{
+
+        left:
+            calc(50% + 105px);
+
+        top:82px;
+
+    }
+
+
+    .final-cake{
+
+        font-size:125px;
+
+    }
+
+
+    .final-side-candle{
+
+        left:
+            calc(50% + 105px);
+
+    }
+
+}
