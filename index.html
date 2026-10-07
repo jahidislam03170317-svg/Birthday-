@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Birthday Dear Mim ❤️</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mim ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,484 +13,264 @@
     <source src="birthday.mp3" type="audio/mpeg">
 </audio>
 
-<div id="particles"></div>
-
-
-<!-- ========================= -->
-<!-- PAGE 1 : WELCOME -->
-<!-- ========================= -->
-
+<!-- PAGE 1 -->
 <section class="page active" id="page1">
+    <div class="welcome">
+        <div class="glow-text">HAPPY BIRTHDAY</div>
+        <div class="mim-glow">Dear Mim ❤️</div>
+        <div class="love-small">❤️ 💕 ❤️</div>
 
-    <div class="story">
-
-        <div class="robot">
-
-            <div class="antenna">✨</div>
-
-            <div class="robot-head">
-
-                <div class="eye"></div>
-                <div class="eye"></div>
-
-                <div class="mouth">⌣</div>
-
-            </div>
-
-            <div class="robot-body">
-                <span>♡</span>
-            </div>
-
-            <div class="arm left">♡</div>
-            <div class="arm right">♡</div>
-
-        </div>
-
-
-        <div class="small-text">
-            A little surprise for someone special... ✨
-        </div>
-
-
-        <h1>
-            Happy Birthday
-        </h1>
-
-        <h2>
-            Dear Mim ❤️
-        </h2>
-
-
-        <p>
-            আজকের দিনটা একটু অন্যরকম।<br>
-            কারণ আজ তোমার দিন... 🥹✨
-        </p>
-
+        <p>Someone has prepared a little surprise for you...</p>
 
         <button onclick="startStory()">
-            Open Your Surprise 💌
+            Open Surprise ❤️
         </button>
+    </div>
+</section>
+
+
+<!-- PAGE 2 : ROBOT BRINGING GIFT -->
+<section class="page" id="page2">
+
+    <div class="robot-scene">
+
+        <div class="scene-title">
+            Wait... Someone is coming 👀
+        </div>
+
+        <div class="walking-area">
+
+            <div class="robot-walking">
+
+                <div class="antenna">❤️</div>
+
+                <div class="robot-head">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                    <div class="robot-mouth">⌣</div>
+                </div>
+
+                <div class="robot-body">
+                    ❤️
+                </div>
+
+                <!-- ROBOT HAND + GIFT -->
+                <div class="robot-arm left-arm"></div>
+
+                <div class="robot-arm right-arm">
+                    <div class="hand-gift">🎁</div>
+                </div>
+
+                <div class="leg leg1"></div>
+                <div class="leg leg2"></div>
+
+            </div>
+
+        </div>
+
+        <p>
+            Robot is bringing something for you... 🎁
+        </p>
 
     </div>
 
 </section>
 
 
+<!-- PAGE 3 : GIFT -->
+<section class="page" id="page3">
+    <div class="gift-page">
 
-<!-- ========================= -->
-<!-- PAGE 2 : LETTER 1 -->
-<!-- ========================= -->
-
-<section class="page" id="page2">
-
-    <div class="letter-card">
-
-        <div class="envelope">
-            💌
+        <div class="big-gift"
+             onclick="openMainGift()">
+            🎁
         </div>
 
-        <span>
-            LETTER 01
-        </span>
+        <h2>A Gift For Mim ❤️</h2>
 
-        <h2>
-            Dear Mim...
-        </h2>
+        <p id="giftOpenText">
+            Tap the gift to open it ❤️
+        </p>
+
+    </div>
+</section>
+
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+    <div class="letter">
+
+        <div class="letter-icon">💌</div>
+
+        <small>LETTER 01</small>
+
+        <h2>Dear Mim ❤️</h2>
 
         <p>
-
             তোমাকে আমার জীবনে পাওয়াটা
             আমার জন্য সত্যিই অনেক সুন্দর
             একটা ব্যাপার।
-
             তোমার সাথে কাটানো ছোট ছোট
             মুহূর্তগুলোও আমার কাছে
             অনেক special। ❤️
-
         </p>
 
-
-        <button onclick="nextPage()">
-            Continue 💕
+        <button onclick="nextLetter()">
+            Next Letter ❤️
         </button>
 
     </div>
-
 </section>
 
 
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+    <div class="letter">
 
-<!-- ========================= -->
-<!-- PAGE 3 : LETTER 2 -->
-<!-- ========================= -->
+        <div class="letter-icon">💗</div>
 
-<section class="page" id="page3">
+        <small>LETTER 02</small>
 
-    <div class="letter-card">
-
-        <div class="floating-heart">
-            💗
-        </div>
-
-        <span>
-            LETTER 02
-        </span>
-
-        <h2>
-            একটা কথা বলি? 🥹
-        </h2>
+        <h2>একটা কথা বলি? ❤️</h2>
 
         <p>
-
             তুমি হাসলে আমারও ভালো লাগে।
-
             তুমি খুশি থাকলে আমার মনটাও
             ভালো হয়ে যায়।
-
             তোমার মুখের হাসিটা সবসময়
             এমনই থাকুক—
             এটাই আমার চাওয়া। ❤️
-
         </p>
 
-
-        <button onclick="nextPage()">
-            Next Letter 💖
+        <button onclick="nextLetter()">
+            Next Letter 💕
         </button>
 
     </div>
-
 </section>
 
 
+<!-- PAGE 6 -->
+<section class="page" id="page6">
+    <div class="letter">
 
-<!-- ========================= -->
-<!-- PAGE 4 : LETTER 3 -->
-<!-- ========================= -->
+        <div class="letter-icon">🌸</div>
 
-<section class="page" id="page4">
+        <small>LETTER 03</small>
 
-    <div class="letter-card">
-
-        <div class="flower">
-            🌸
-        </div>
-
-        <span>
-            LETTER 03
-        </span>
-
-        <h2>
-            আমার একটা চাওয়া... ✨
-        </h2>
+        <h2>আমার একটা চাওয়া... ❤️</h2>
 
         <p>
-
-            জীবনে যত birthday আসবে,
+            জীবনের যত birthday আসবে,
             তার অনেকগুলোতেই যেন তোমাকে
             এভাবেই wish করতে পারি।
-
             তোমার special দিনগুলোকে
-            একটু হলেও special করে
-            রাখতে পারি। ❤️
-
+            special করে রাখতে পারি। ❤️
         </p>
 
-
-        <button onclick="nextPage()">
-            One Last Letter 💗
+        <button onclick="nextLetter()">
+            Final Letter 💗
         </button>
 
     </div>
-
 </section>
 
 
+<!-- PAGE 7 -->
+<section class="page" id="page7">
+    <div class="letter">
 
-<!-- ========================= -->
-<!-- PAGE 5 : FINAL LETTER -->
-<!-- ========================= -->
+        <div class="letter-icon">❤️</div>
 
-<section class="page" id="page5">
+        <small>FINAL LETTER</small>
 
-    <div class="letter-card final-letter">
-
-        <div class="sparkle">
-            ✨
-        </div>
-
-        <span>
-            FINAL LETTER
-        </span>
-
-        <h2>
-            Dear Mim ❤️
-        </h2>
+        <h2>Dear Mim ❤️</h2>
 
         <p>
-
-            আজ শুধু একটা কথাই বলতে চাই—
-
             সবসময় ভালো থেকো,
             হাসিখুশি থেকো।
-
             তোমার প্রতিটা স্বপ্ন পূরণ হোক,
             আর তোমার প্রতিটা birthday
-            আগেরটার চেয়েও সুন্দর হোক। ❤️
-
+            আগেরটার চেয়েও সুন্দর হোক।
+            ❤️
         </p>
 
+        <h3>You Are Very Special ❤️</h3>
 
-        <div class="love-line">
-            You are very special. 🥹❤️
-        </div>
-
-
-        <button onclick="nextPage()">
-            There Is A Gift 🎁
+        <button onclick="showTapGift()">
+            One More Surprise ❤️
         </button>
 
     </div>
-
 </section>
 
 
+<!-- PAGE 8 : LAST GIFT -->
+<section class="page" id="page8">
+    <div class="tap-gift">
 
-<!-- ========================= -->
-<!-- PAGE 6 : GIFT -->
-<!-- ========================= -->
-
-<section class="page" id="page6">
-
-    <div class="gift-page">
-
-        <div class="gift-title">
-            Someone brought you a gift... 🎁
+        <div class="tap-title">
+            One Last Surprise ❤️
         </div>
 
-
-        <div class="gift-robot">
-
-            <div class="robot small-robot">
-
-                <div class="antenna">
-                    ✨
-                </div>
-
-                <div class="robot-head">
-
-                    <div class="eye"></div>
-                    <div class="eye"></div>
-
-                    <div class="mouth">
-                        ⌣
-                    </div>
-
-                </div>
-
-
-                <div class="robot-body">
-                    <span>♡</span>
-                </div>
-
-            </div>
-
-
-
-            <!-- GIFT -->
-
-            <div class="gift-box"
-                 onclick="openGift()">
-
-                <div class="gift-lid"></div>
-
-                <div class="gift-body"></div>
-
-                <div class="ribbon-v"></div>
-
-                <div class="ribbon-h"></div>
-
-                <div class="gift-bow">
-                    🎀
-                </div>
-
-            </div>
-
+        <div class="tap-gift-box"
+             onclick="openFinalGift()">
+            🎁
         </div>
-
 
         <h2>
-            For You, Mim ❤️
+            Tap To Open Gift ❤️
         </h2>
 
-
-        <p id="giftText">
-            Tap the gift 🎁
+        <p>
+            Something beautiful is waiting for you...
         </p>
 
     </div>
-
 </section>
 
 
+<!-- PAGE 9 : FINAL -->
+<section class="page final-page" id="page9">
 
-<!-- ========================= -->
-<!-- PAGE 7 : CAKE -->
-<!-- ========================= -->
+    <div class="final">
 
-<section class="page" id="page7">
-
-    <div class="cake-page">
-
-
-        <div class="cake-title">
-            Make a wish, Mim... ✨
+        <div class="final-cake">
+            🎂
         </div>
 
-
-        <!-- CAKE + SIDE CANDLE -->
-
-        <div class="cake-scene">
-
-
-            <!-- Cake -->
-
-            <div class="cake">
-                🎂
-            </div>
-
-
-
-            <!-- Candle beside cake -->
-
-            <div class="side-candle">
-
-                <div class="side-flame"
-                     id="flame">
-
-                    🔥
-
-                </div>
-
-                🕯️
-
-            </div>
-
-
+        <div class="final-happy">
+            Happy Birthday Pookie ❤️
         </div>
-
-
-        <h2>
-            Happy Birthday Dear Mim ❤️
-        </h2>
-
-
-        <p>
-            Close your eyes and make a wish... ✨
-        </p>
-
-
-        <button onclick="blowCandle()">
-            Blow the Candle 🕯️
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================= -->
-<!-- PAGE 8 : FINAL -->
-<!-- ========================= -->
-
-<section class="page final-page"
-         id="page8">
-
-    <div class="final-story">
-
-
-        <div class="celebration">
-            🎉 ✨ 🎊 ✨ 🎉
-        </div>
-
-
-        <!-- FINAL CAKE -->
-
-        <div class="final-cake-scene">
-
-
-            <div class="final-cake">
-                🎂
-            </div>
-
-
-            <!-- Candle beside cake -->
-
-            <div class="final-side-candle">
-
-                <span>
-                    🔥
-                </span>
-
-                🕯️
-
-            </div>
-
-        </div>
-
-
-        <div class="final-title">
-            Happy Birthday
-        </div>
-
-
-        <div class="mim-name">
-            Dear Mim ❤️
-        </div>
-
-
-        <p>
-
-            May your life always be filled with
-            happiness, beautiful moments,
-            and endless smiles. ✨
-
-        </p>
-
-
-        <div class="divider">
-            ❤️ ❤️ ❤️
-        </div>
-
-
-        <div class="from">
-            With love,
-        </div>
-
 
         <div class="jahid">
-            Your Jamai, Jahid ❤️
+            Dear Jamai ❤️
         </div>
 
+        <div class="hearts-line">
+            ❤️ 💕 ❤️
+        </div>
 
         <div class="final-robot">
             🤖🎁
         </div>
 
-
-        <div class="bottom-hearts">
-            ❤️ 💕 🌸 💖 ✨ 🌸 💕 ❤️
-        </div>
-
     </div>
 
 </section>
+    <section class="page final-message-page" id="page10">
+    <div class="final-message">
+        <h1>I really like it ❤️</h1>
+    </div>
+</section>
 
+<script src="script.js"></script>
+
+</body>
+</html>
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
